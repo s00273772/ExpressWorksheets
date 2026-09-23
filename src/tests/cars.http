@@ -5,7 +5,8 @@ POST {{endpoint}} HTTP/1.1
 content-type: application/json
 
 { 
-    "test" : "post test"
+    "make" : "Nissan",
+    "model" : "Quashqai"
 }
 
 
@@ -14,16 +15,21 @@ GET  {{endpoint}} HTTP/3.0
 content-type: application/json
 
 ###
-GET  {{endpoint}}/sillycarID HTTP/3.0
+GET  {{endpoint}}/6ab39d413359ed55599cfe17 HTTP/3.0
 content-type: application/json
 
 
 ###
 
-DELETE  {{endpoint}}/sillycarID HTTP/3.0
+DELETE  {{endpoint}}/6ab39d413359ed55599cfe17 HTTP/3.0
 content-type: application/json
 
 ###
 
-PUT  {{endpoint}}/sillycarID HTTP/3.0
+PUT  {{endpoint}}/6ab39b6939bb4c3367750d27 HTTP/3.0
 content-type: application/json
+
+{ 
+    "make" : "Opel",
+    "model" : "Astra"
+}
