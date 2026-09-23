@@ -7,13 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "start": "node build/app.js",
-    "dev": "tsx watch src/app.ts", 
-    "typecheck": "tsc --noEmit" 
+    "dev": "tsx watch src/app.ts",
+    "typecheck": "tsc --noEmit"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^18.0.3",
     "express": "^5.2.1"
   },
   "devDependencies": {
@@ -21,5 +22,14 @@
     "@types/node": "^26.6.2",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s00273772/ExpressWorksheets.git"
+  },
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/s00273772/ExpressWorksheets/issues"
+  },
+  "homepage": "https://github.com/s00273772/ExpressWorksheets#readme"
 }
