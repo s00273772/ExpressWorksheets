@@ -4,10 +4,11 @@
 # @name postACar
 POST {{endpoint}} HTTP/1.1
 content-type: application/json
+x-api-key: blahblah
 
 { 
-    "make" : "Volkswagen",
-    "model" : "Beetle"
+    "make" : "Test",
+    "model" : "Post"
 }
 
 ###
@@ -38,3 +39,8 @@ content-type: application/json
     "make" : "Opel",
     "model" : "Astra"
 }
+
+###
+GET http://localhost:3000/api/v1/cars HTTP/1.1
+content-type: application/json
+x-api-key: blahblah

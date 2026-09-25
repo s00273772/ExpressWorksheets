@@ -32,7 +32,7 @@ export class CarController {
     };
 
 
-  createCar = async (req: Request, res: Response): Promise<void> => {
+   createCar = async (req: Request, res: Response): Promise<void> => {
     try {
       const newCar = await carService.createCar(req.body);
       res.status(201).json(newCar);
@@ -72,5 +72,4 @@ export class CarController {
       res.status(500).json({ message: 'Error deleting car', error });
     } 
   };
-
 }
