@@ -1,10 +1,17 @@
 import express, {Application, Request, Response} from "express"; 
 import carRoutes from './routes/cars';
+import {CarController} from './controllers/cars';
+import {log} from './middleware/logging.middleware'
 import { env } from "./config/env";
-import {connectDB} from "./config/database"
+import {connectDB} from "./config/database";
+import { authenticateKey } from "./middleware/auth.middleware";
 
 const PORT = env.port
 const app: Application = express(); 
+
+const createCar = new CarController();
+
+app.use(log);
 
 app.get("/ping", async (_req : Request, res: Response) => { 
     res.json({ 
@@ -48,15 +55,13 @@ app.get('/purple', async (_req : Request, res: Response) => {
 
 }); 
 
-app.use((req, _res, next) => { 
-    console.log(`${req.method} ${req.originalUrl}`); 
-    next(); 
 
-}); 
 
 app.use(express.json());
 
 app.use('/api/v1/cars', carRoutes);
+
+app.post('/', authenticateKey, log, createCar.createCar)
 
 
  
