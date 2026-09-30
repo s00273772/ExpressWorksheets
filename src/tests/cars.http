@@ -34,12 +34,11 @@ content-type: application/json
 
 ###
 
-PUT  {{endpoint}}/6ab39b6939bb4c3367750d27 HTTP/3.0
+PUT  {{endpoint}}/6abcd186c4fbd70f78f64025 HTTP/3.0
 content-type: application/json
 
 { 
-    "make" : "Opel",
-    "model" : "Astra"
+    "year" : 2022
 }
 
 ###
