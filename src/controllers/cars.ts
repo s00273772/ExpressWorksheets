@@ -104,6 +104,28 @@ export class CarController {
   };
 
 
+/**
+* @openapi
+* /cars/{id}:
+*   delete:
+*     summary: Delete a car by ID
+*     tags:
+*       - Cars
+*     parameters:
+*       - in: path
+*         name: id
+*         required: true
+*         schema:
+*           type: string
+*     responses:
+*       200:
+*         description: Car deleted
+*       404:
+*         description: Car not found
+*       500:
+*         description: Internal server error
+*/
+
   
 
   deleteCar = async (req: Request, res: Response): Promise<void> => {
