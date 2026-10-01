@@ -6,18 +6,7 @@ const carService = new CarService();
 
 export class CarController {
 
-  getCars = async (_req: Request, res: Response): Promise<void> => {
-
-    try {
-      const cars = await carService.getAllCars();
-      res.status(200).json(cars);
-    } catch (error) {
-      res.status(500).json({ message: 'Error fetching cars', error });
-    }
-  };
-
-
-  /**
+   /**
  * @openapi
  * /cars:
  *   get:
@@ -30,6 +19,18 @@ export class CarController {
  *       500:
  *         description: Internal server error
  */
+  getCars = async (_req: Request, res: Response): Promise<void> => {
+
+    try {
+      const cars = await carService.getAllCars();
+      res.status(200).json(cars);
+    } catch (error) {
+      res.status(500).json({ message: 'Error fetching cars', error });
+    }
+  };
+
+
+ 
 
 
   getCarById = async (req: Request, res: Response): Promise<void> => {
