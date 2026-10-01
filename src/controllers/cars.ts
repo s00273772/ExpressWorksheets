@@ -1,6 +1,5 @@
 import { Request, Response } from 'express';
 import { CarService } from '../services/cars';
-import { createCarZSchema } from '../models/cars';
 
 const carService = new CarService();
 
@@ -16,6 +15,21 @@ export class CarController {
       res.status(500).json({ message: 'Error fetching cars', error });
     }
   };
+
+
+  /**
+ * @openapi
+ * /cars:
+ *   get:
+ *     summary: Retrieve all cars
+ *     tags:
+ *       - Cars
+ *     responses:
+ *       200:
+ *         description: Successfully retrieved cars
+ *       500:
+ *         description: Internal server error
+ */
 
 
   getCarById = async (req: Request, res: Response): Promise<void> => {
