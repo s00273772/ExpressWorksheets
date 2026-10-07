@@ -1,10 +1,6 @@
 import request from "supertest";
 import { app } from "../../src/app";
-//import { connectDB } from "../../../src/config/database";
 
-/*beforeAll(async () => {
-    await connectDB();
-});*/
 
 describe('GET / cars', () => {
 
@@ -15,4 +11,17 @@ describe('GET / cars', () => {
 
         expect(response.status).toBe(200);
     });
+
+   /* it('returns 200 for valid car ID', async () => {
+        const car = {
+            make: 'Toyota',
+            model: 'Camry',
+            year: 2020,
+        }
+
+        const response = await request(app)
+        .get(`/api/v1/cars/${carId}`);
+
+        expect(response.status).toBe(200);
+    })*/
 });
