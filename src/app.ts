@@ -23,7 +23,7 @@ app.use(log);
 
 app.get("/ping", async (_req : Request, res: Response) => { 
     res.json({ 
-    message: "hello from Shauna. Web Programming 2 Exercise 1 "
+    message: "hello from Shauna"
     }); 
 
 }); 
