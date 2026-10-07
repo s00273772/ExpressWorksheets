@@ -2,14 +2,14 @@ import express, {Application, Request, Response} from "express";
 import carRoutes from './routes/cars';
 import {CarController} from './controllers/cars';
 import {log} from './middleware/logging.middleware'
-import { env } from "./config/env";
-import {connectDB} from "./config/database";
+//import { env } from "./config/env";
+//import {connectDB} from "./config/database";
 import { authenticateKey } from "./middleware/auth.middleware";
 import { swaggerSpec } from "./config/swagger";
 import swaggerUi from "swagger-ui-express"
 
-const PORT = env.port
-const app: Application = express(); 
+//const PORT = env.port
+export const app: Application = express(); 
 
 const createCar = new CarController();
 
@@ -74,14 +74,14 @@ app.post('/', authenticateKey, log, createCar.createCar)
 
  
 
-const startServer = async () => {
+/*const startServer = async () => {
   await connectDB();
 
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
   });
 };
-startServer();
+startServer();*/
 
 
    
