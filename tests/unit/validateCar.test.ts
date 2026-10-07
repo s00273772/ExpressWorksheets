@@ -1,4 +1,4 @@
-import { createCarZSchema } from "../../models/cars";
+import { createCarZSchema } from "../../src/models/cars";
 
 const validCar = {
     "make": "Toyota",
