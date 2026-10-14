@@ -34,11 +34,11 @@ content-type: application/json
 
 ###
 
-PUT  {{endpoint}}/6ab3a2ad3359ed55599cfe1a HTTP/3.0
+PUT  {{endpoint}}/6ab6a0bf8391fa7caaa3c30a HTTP/3.0
 content-type: application/json
 
 { 
-    "make" : "Opel"
+    "make" : 1
 }
 
 ###
