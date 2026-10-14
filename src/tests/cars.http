@@ -8,8 +8,8 @@ x-api-key: blahblah
 
 { 
     "make" : "Toyota",
-    "model" : "Yaris",
-    "year": 2026
+    "model" : "Yaris Cross",
+    "year": 2024
     
 }
 
@@ -29,16 +29,16 @@ content-type: application/json
 
 ###
 
-DELETE  {{endpoint}}/6abcc5181bd63b4ab13675dc HTTP/3.0
+DELETE  {{endpoint}}/6ac602a15f5cc4f3191a2ea9 HTTP/3.0
 content-type: application/json
 
 ###
 
-PUT  {{endpoint}}/6abcd186c4fbd70f78f64025 HTTP/3.0
+PUT  {{endpoint}}/6ab39b6939bb4c3367750d27 HTTP/3.0
 content-type: application/json
 
 { 
-    "year" : 2001
+    "make" : "Opel"
 }
 
 ###
