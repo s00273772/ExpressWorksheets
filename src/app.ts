@@ -2,11 +2,10 @@ import express, {Application, Request, Response} from "express";
 import carRoutes from './routes/cars';
 import {CarController} from './controllers/cars';
 import {log} from './middleware/logging.middleware'
-//import { env } from "./config/env";
-//import {connectDB} from "./config/database";
-import { authenticateKey } from "./middleware/auth.middleware";
+import { authenticateKey, errorHandler } from "./middleware/auth.middleware";
 import { swaggerSpec } from "./config/swagger";
 import swaggerUi from "swagger-ui-express"
+import cors from "cors";
 
 //const PORT = env.port
 export const app: Application = express(); 
@@ -27,6 +26,16 @@ app.get("/ping", async (_req : Request, res: Response) => {
     }); 
 
 }); 
+
+app.get("/pong", (_req : Request, res: Response) =>{
+    console.log("Received request to /pong");
+    throw new Error("Simulated error in /pong route");
+});
+
+app.get("/pung", (_req : Request, res: Response) => {
+    console.log("Received request to /pung");
+    throw new Error("Simulated error in /pung route");
+});
 
 app.get('/bananas', async (_req : Request, res: Response) => { 
     res.json({ 
@@ -67,6 +76,8 @@ app.get('/purple', async (_req : Request, res: Response) => {
 
 app.use(express.json());
 
+app.use(cors());
+
 app.use('/api/v1/cars', carRoutes);
 
 app.post('/', authenticateKey, log, createCar.createCar)
@@ -74,14 +85,7 @@ app.post('/', authenticateKey, log, createCar.createCar)
 
  
 
-/*const startServer = async () => {
-  await connectDB();
-
-  app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-  });
-};
-startServer();*/
+app.use(errorHandler);
 
 
    
