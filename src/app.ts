@@ -7,11 +7,14 @@ import {log} from './middleware/logging.middleware'
 import { authenticateKey } from "./middleware/auth.middleware";
 import { swaggerSpec } from "./config/swagger";
 import swaggerUi from "swagger-ui-express"
+import cors from "cors";
 
 //const PORT = env.port
 export const app: Application = express(); 
 
 const createCar = new CarController();
+
+app.use(cors());
 
 app.use(
     '/api-docs',
