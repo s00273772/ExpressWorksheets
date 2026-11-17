@@ -12,13 +12,16 @@ export const app: Application = express();
 
 const createCar = new CarController();
 
+app.use(cors());
+app.use(express.json());
+app.use(log);
+
 app.use(
     '/api-docs',
     swaggerUi.serve,
     swaggerUi.setup(swaggerSpec)
 );
 
-app.use(log);
 
 app.get("/ping", async (_req : Request, res: Response) => { 
     res.json({ 
@@ -74,9 +77,7 @@ app.get('/purple', async (_req : Request, res: Response) => {
 
 
 
-app.use(express.json());
 
-app.use(cors());
 
 app.use('/api/v1/cars', carRoutes);
 
