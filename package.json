@@ -17,23 +17,23 @@
   "dependencies": {
     "@types/cors": "^2.8.19",
     "cors": "^2.8.6",
-    "dotenv": "^18.0.3",
-    "express": "^5.2.1",
-    "mongoose": "^9.10.2",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "mongoose": "^9.12.2",
     "swagger-jsdoc": "^6.3.0",
     "swagger-ui-express": "^5.0.1",
-    "zod": "^4.6.5"
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
-    "@types/node": "^26.6.3",
+    "@types/node": "^26.6.6",
     "@types/supertest": "^7.2.1",
     "@types/swagger-jsdoc": "^6.0.4",
     "@types/swagger-ui-express": "^4.1.8",
-    "supertest": "^7.3.1",
+    "supertest": "^7.3.2",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2",
-    "vitest": "^5.0.4"
+    "vitest": "^5.1.0"
   },
   "repository": {
     "type": "git",
@@ -43,5 +43,8 @@
   "bugs": {
     "url": "https://github.com/s00273772/ExpressWorksheets/issues"
   },
-  "homepage": "https://github.com/s00273772/ExpressWorksheets#readme"
+  "homepage": "https://github.com/s00273772/ExpressWorksheets#readme",
+  "directories": {
+    "test": "tests"
+  }
 }

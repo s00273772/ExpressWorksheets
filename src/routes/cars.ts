@@ -10,7 +10,7 @@ router.get('/', carController.getCars);
 
 router.get('/:id', validate(carParamsSchema), carController.getCarById);
 router.post('/', validate(createCarZSchema), carController.createCar);
-router.put('/:id', validate(updateCarZSchema), validate(carParamsSchema), carController.updateCar);
+router.put('/:id', validate(carParamsSchema), validate(updateCarZSchema),  carController.updateCar);
 router.delete('/:id', validate(carParamsSchema), carController.deleteCar);
 
 export default router;

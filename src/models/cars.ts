@@ -55,6 +55,7 @@ export const updateCarZSchema = z.object({
 });
 
 export const carParamsSchema = z.object({
+  body: z.any(),
   params: z.object({
     id: z.string().regex(/^[0-9a-fA-F]{24}$/, 'Invalid ObjectId')
   })

@@ -19,6 +19,8 @@ export const validate = (schema: z.ZodObject<any>) => (
             return;
         }
 
+        
+
         req.body = validation.data.body;
 
         next();
