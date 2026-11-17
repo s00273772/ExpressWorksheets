@@ -19,3 +19,15 @@ export class ValidationError extends AppError{
         super(message, 400);
     }
 }
+
+export class UserAlreadyExistsError extends AppError{
+    constructor(){
+        super('User already exists', 409)
+    }
+}
+
+export class UnauthorisedError extends AppError{
+    constructor(message: string){
+        super(message, 401);
+    }
+}
