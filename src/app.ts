@@ -6,9 +6,13 @@ import { authenticateKey, errorHandler } from "./middleware/auth.middleware";
 import { swaggerSpec } from "./config/swagger";
 import swaggerUi from "swagger-ui-express"
 import cors from "cors";
+import authRoutes from './routes/auth';
+
 
 //const PORT = env.port
 export const app: Application = express(); 
+
+
 
 const createCar = new CarController();
 
@@ -80,6 +84,7 @@ app.get('/purple', async (_req : Request, res: Response) => {
 
 
 app.use('/api/v1/cars', carRoutes);
+app.use('/api/v1/auth', authRoutes);
 
 app.post('/', authenticateKey, log, createCar.createCar)
 
